@@ -1,0 +1,6 @@
+  - hosts: webservers
+    tasks:
+      - name: Restart Apache gracefully
+        command: apachectl -k graceful
+        become: true
+        become_user: root

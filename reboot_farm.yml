@@ -1,0 +1,14 @@
+---
+
+  - hosts: watt.oxasploits.com, heat.oxasploits.com, torque.oxasploits.com
+    tasks:
+      - name: "Rebooting *nix machines"
+        become: yes
+        become_user: root
+        ansible.builtin.reboot:
+          test_command: uptime
+  - hosts: conductor.oxasploits.com, ohm.oxasploits.com
+    tasks:
+      - name: "Rebooting Windows machines"
+        ansible.windows.win_reboot:
+         boot_time_command: "(Get-CimInstance -ClassName Win32_OperatingSystem -Property LastBootUpTime).LastBootUpTime.ToFileTime()"

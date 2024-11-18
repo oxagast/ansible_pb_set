@@ -1,0 +1,168 @@
+webservers:
+  hosts:
+    hyperon.oxasploits.com:
+      ansible_connection: ssh
+      ansible_user: ansible
+      ansible_ssh_private_key_file: /home/marshall/.ssh/ansible_pair
+vms:
+  hosts:
+    watt.oxasploits.com:
+      ansible_connection: ssh
+      ansible_user: ansible
+      ansible_ssh_private_key_file: /home/marshall/.ssh/ansible_pair
+    conductor.oxasploits.com:
+      ansible_python_interpreter: C:\Users\Marshall Whittaker\AppData\Local\Microsoft\WindowsApps\python.exe
+      ansible_connection: ssh
+      ansible_user: "Marshall Whittaker"
+      ansible_ssh_pass: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          38373336383938373333346566313366313166663939663137646661623563613839316636656263
+          3434353966626664656437643130646463316562643332360a616632366631616638323030616132
+          37623537626536393264346630313135623763656435616361326464646233326466653065643864
+          3862333234386163650a336664383765626433653734306539633633646264303531343864343435
+          3334
+    ohm.oxasploits.com:
+      ansible_connection: ssh
+      ansible_user: ansible
+    heat.oxasploits.com:
+      ansible_connection: ssh
+      ansible_user: ansible
+      ansible_python_interpreter: auto_silent
+      ansible_ssh_private_key_file: /home/marshall/.ssh/ansible_pair
+windows:
+  hosts:
+    ohm.oxasploits.com:
+      ansible_python_interpreter: C:\Users\Marshall Whittaker\AppData\Local\Microsoft\WindowsApps\python.exe
+      ansible_connection: ssh
+      ansible_shell_type: cmd
+      ansible_user: "Marshall Whittaker"
+      ansible_ssh_pass: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          38373336383938373333346566313366313166663939663137646661623563613839316636656263
+          3434353966626664656437643130646463316562643332360a616632366631616638323030616132
+          37623537626536393264346630313135623763656435616361326464646233326466653065643864
+          3862333234386163650a336664383765626433653734306539633633646264303531343864343435
+          3334
+    conductor.oxasploits.com:
+      ansible_python_interpreter: C:\Users\Marshall Whittaker\AppData\Local\Microsoft\WindowsApps\python.exe
+      ansible_ssh_pass: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          38373336383938373333346566313366313166663939663137646661623563613839316636656263
+          3434353966626664656437643130646463316562643332360a616632366631616638323030616132
+          37623537626536393264346630313135623763656435616361326464646233326466653065643864
+          3862333234386163650a336664383765626433653734306539633633646264303531343864343435
+          3334
+      ansible_connection: ssh
+      ansible_shell_type: cmd
+      ansible_user: "Marshall Whittaker"
+linux:
+  hosts:
+    watt.oxasploits.com:
+      ansible_connection: ssh
+      ansible_user: ansible
+      ansible_ssh_private_key_file: /home/marshall/.ssh/ansible_pair
+    drift.oxasploits.com:
+      ansible_connection: ssh
+      ansible_user: ansible
+      ansible_ssh_private_key_file: /home/marshall/.ssh/ansible_pair
+    amperage.oxasploits.com:
+      ansible_connection: local
+      ansible_user: ansible
+    hyperon.oxasploits.com:
+      ansible_connection: ssh
+      ansible_user: ansible
+      ansible_ssh_private_key_file: /home/marshall/.ssh/ansible_pair
+    voltage.oxasploits.com:
+      ansible_connection: ssh
+      ansible_user: ansible
+      ansible_ssh_private_key_file: /home/marshall/.ssh/ansible_pair
+freebsd:
+  hosts:
+    diffraction.oxasploits.com:
+      ansible_connection: ssh
+      ansible_user: ansible
+      ansible_ssh_private_key_file: /home/marshall/.ssh/ansible_pair
+      ansible_python_interpreter: auto_silent
+    heat.oxasploits.com:
+      ansible_connection: ssh
+      ansible_user: ansible
+      ansible_python_interpreter: auto_silent
+      ansible_ssh_private_key_file: /home/marshall/.ssh/ansible_pair
+openbsd:
+  hosts:
+    torque.oxasploits.com:
+      ansible_connection: ssh
+      ansible_user: ansible
+      ansible_python_interpreter: auto_silent
+      ansible_ssh_private_key_file: /home/marshall/.ssh/ansible_pair
+fileservers:
+  hosts:
+    diffraction.oxasploits.com:
+      ansible_connection: ssh
+      ansible_user: ansible
+      ansible_python_interpreter: auto_silent
+      ansible_ssh_private_key_file: /home/marshall/.ssh/ansible_pair
+vmservers:
+  hosts:
+    amperage.oxasploits.com:
+      ansible_connection: local
+      ansible_user: ansible
+offsite:
+  hosts:
+    hyperon.oxasploits.com:
+      ansible_connection: ssh
+      ansible_user: ansible
+      ansible_ssh_private_key_file: /home/marshall/.ssh/ansible_pair
+    voltage.oxasploits.com:
+      ansible_connection: ssh
+      ansible_user: ansible
+      ansible_ssh_private_key_file: /home/marshall/.ssh/ansible_pair
+onsite:
+  hosts:
+    amperage.oxasploits.com:
+      ansible_connection: local
+      ansible_user: ansible
+    diffraction.oxasploits.com:
+      ansible_connection: ssh
+      ansible_user: ansible
+      ansible_ssh_private_key_file: /home/marshall/.ssh/ansible_pair
+    heat.oxasploits.com:
+      ansible_connection: ssh
+      ansible_user: ansible
+      ansible_ssh_private_key_file: /home/marshall/.ssh/ansible_pair
+    drift.oxasploits.com:
+      ansible_connection: ssh
+      ansible_user: ansible
+      ansible_ssh_private_key_file: /home/marshall/.ssh/ansible_pair
+    watt.oxasploits.com:
+      ansible_connection: ssh
+      ansible_user: ansible
+      ansible_ssh_private_key_file: /home/marshall/.ssh/ansible_pair
+    conductor.oxasploits.com:
+      ansible_python_interpreter: C:\Users\Marshall Whittaker\AppData\Local\Microsoft\WindowsApps\python.exe
+      ansible_ssh_pass: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          38373336383938373333346566313366313166663939663137646661623563613839316636656263
+          3434353966626664656437643130646463316562643332360a616632366631616638323030616132
+          37623537626536393264346630313135623763656435616361326464646233326466653065643864
+          3862333234386163650a336664383765626433653734306539633633646264303531343864343435
+          3334
+      ansible_connection: ssh
+      ansible_user: "Marshall Whittaker"
+      ansible_shell_type: cmd
+    ohm.oxasploits.com:
+      ansible_python_interpreter: C:\Users\Marshall Whittaker\AppData\Local\Microsoft\WindowsApps\python.exe
+      ansible_connection: ssh
+      ansible_ssh_pass: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          38373336383938373333346566313366313166663939663137646661623563613839316636656263
+          3434353966626664656437643130646463316562643332360a616632366631616638323030616132
+          37623537626536393264346630313135623763656435616361326464646233326466653065643864
+          3862333234386163650a336664383765626433653734306539633633646264303531343864343435
+          3334
+      ansible_shell_type: cmd
+      ansible_user: "Marshall Whittaker"
+bsd:
+  children:
+    openbsd:
+    freebsd:

@@ -1,0 +1,37 @@
+# Creator: oxagast
+#
+# usage:
+#    ansible-playbook -i inventory.yml conn_chk.yml --extra-vars "hostname=google.com" --vault-pass-file vault.pass
+#     or..
+#    ansible-playbook -i inventory.yml conn_chk.yml --ask-vault-pass
+
+
+---
+
+- hosts: linux
+  gather_facts: False
+  connection: local
+  vars:
+    ip: "{{ hostname | default('8.8.8.8', true) }}"
+  tasks:
+    - name: Pinging host {{ ip }}
+      shell: ping -w 8 -c 1 {{ ip }}
+      ignore_errors: false
+- hosts: freebsd
+  gather_facts: False
+  connection: local
+  vars:
+    ip: "{{ hostname | default('8.8.8.8', true) }}"
+  tasks:
+    - name: Pinging host {{ ip }}
+      shell: ping -t 8 -c 1 {{ ip }}
+      ignore_errors: false
+- hosts: windows
+  gather_facts: False
+  connection: local
+  vars:
+    ip: "{{ hostname | default('8.8.8.8', true) }}"
+  tasks:
+    - name: Pinging host {{ ip }}
+      win_command: ping -w 8 -n 1 {{ ip }}
+      ignore_errors: false
